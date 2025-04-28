@@ -1,6 +1,4 @@
-// Use environment variable with fallback for local development
-const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '+254743149316';
-
+// Terminal effect with Typed.js
 document.addEventListener('DOMContentLoaded', () => {
     new Typed('#typing-text', {
         strings: ['Cyber Hacker', 'Security Guru', 'Kali Master', 'Network Ninja'],
@@ -108,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .join(', ');
         const total = totalPriceSpan.textContent;
         const message = `Selected Services: ${selectedServices}\nTotal: KSh ${total}`;
-        const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/+254743149316?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
     });
 
@@ -141,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Don’t click weird links in emails—check where they go first.</li>
                     <li>Keep your phone and computer updated.</li>
                     <li>Only visit websites with a lock icon (HTTPS).</li>
-                    <li>Need help staying safe? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Need help staying safe? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -153,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Check what’s running on your computer (Task Manager on Windows).</li>
                     <li>Use a free scanner like Malwarebytes to find bad stuff.</li>
                     <li>Watch for strange internet use with tools like Wireshark.</li>
-                    <li>Think you’ve got malware? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Think you’ve got malware? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -165,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Start your computer in Safe Mode to limit bad programs.</li>
                     <li>Use a tool like Malwarebytes to delete malware.</li>
                     <li>Delete strange files in your Downloads folder.</li>
-                    <li>Change passwords after cleaning. Need help? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Change passwords after cleaning. Need help? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -178,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Turn off location tracking on your phone.</li>
                     <li>Use a browser like Firefox that cares about privacy.</li>
                     <li>Don’t share too much on social media—check your settings.</li>
-                    <li>Want a privacy check? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Want a privacy check? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -190,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Add an ad-blocker like uBlock Origin to your browser.</li>
                     <li>Use an ad-blocking DNS like AdGuard (change in Wi-Fi settings).</li>
                     <li>Turn off JavaScript on sketchy websites.</li>
-                    <li>Need help with ads? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Need help with ads? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -202,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Turn on your firewall to block bad connections.</li>
                     <li>Update your phone and computer regularly.</li>
                     <li>Use a strong password and lock your device.</li>
-                    <li>Need a secure setup? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Need a secure setup? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -215,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Make sure the Wi-Fi name is legit—ask the cafe staff.</li>
                     <li>Only visit websites with a lock icon (HTTPS).</li>
                     <li>Risks: Hackers can steal your info or trick you with fake Wi-Fi.</li>
-                    <li>Need Wi-Fi safety help? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Need Wi-Fi safety help? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -228,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Scan your device for malware.</li>
                     <li>Check your bank for weird payments.</li>
                     <li>Add two-step login to your accounts.</li>
-                    <li>Been hacked? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Been hacked? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -242,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li><strong>Trojans</strong>: Pretend to be good apps but cause harm.</li>
                     <li><strong>Worms</strong>: Spread through networks on their own.</li>
                     <li>Spread by fake emails, bad downloads, or USB sticks.</li>
-                    <li>Worried about malware? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Worried about malware? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -254,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Check website addresses—scams use fake ones like “g00gle.com”.</li>
                     <li>Hang up on calls saying your computer has a virus.</li>
                     <li>Don’t send money to strangers online, even if they seem nice.</li>
-                    <li>Got a weird email or call? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Got a weird email or call? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -266,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Use a credit card, not a debit card, for online buys.</li>
                     <li>Check reviews before buying from new stores.</li>
                     <li>Don’t save your card info on shopping sites.</li>
-                    <li>Got a fishy shopping site? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Got a fishy shopping site? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -278,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Turn on two-step login (like a code sent to your phone).</li>
                     <li>Don’t accept friend requests from strangers.</li>
                     <li>Make your posts private so only friends see them.</li>
-                    <li>Account acting weird? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Account acting weird? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -290,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Use a free cloud service like Google Drive or Dropbox.</li>
                     <li>Back up your stuff every month.</li>
                     <li>Keep your backups in a safe place, not just on your computer.</li>
-                    <li>Need help backing up? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Need help backing up? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         },
@@ -302,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <li>Set up parental controls on their phone or computer.</li>
                     <li>Check what apps and games they’re using.</li>
                     <li>Teach them to tell you about weird messages.</li>
-                    <li>Need help keeping kids safe? Text <a href="https://wa.me/${WHATSAPP_NUMBER}" class="text-neon-green hover:underline">${WHATSAPP_NUMBER}</a>.</li>
+                    <li>Need help keeping kids safe? Text <a href="https://wa.me/+254743149316" class="text-neon-green hover:underline">+254743149316</a>.</li>
                 </ul>
             `
         }
