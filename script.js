@@ -1,7 +1,7 @@
 // Terminal effect with Typed.js
 document.addEventListener('DOMContentLoaded', () => {
     new Typed('#typing-text', {
-        strings: ['Cyber Hacker', 'Security Guru', 'Kali Master', 'Network Ninja'],
+        strings: ['Ethical Hacker', 'Security Guru', 'Kali Master', 'Network Ninja'],
         typeSpeed: 100,
         backSpeed: 50,
         backDelay: 2000,
