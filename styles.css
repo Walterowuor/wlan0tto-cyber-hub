@@ -1,0 +1,68 @@
+:root {
+    --neon-green: #39FF14;
+}
+
+body {
+    background-color: #1F2937;
+    color: #F3F4F6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+    background-color: #1F2937;
+    color: #F3F4F6;
+}
+
+body:not(.dark) {
+    background-color: #F3F4F6;
+    color: #1F2937;
+}
+
+.text-neon-green {
+    color: var(--neon-green);
+}
+
+.bg-neon-green {
+    background-color: var(--neon-green) !important;
+}
+
+.shadow-neon-green {
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+.carousel-item {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-0.5rem);
+}
+
+.main-tab-button.active {
+    background-color: var(--neon-green) !important;
+    color: #FFFFFF !important;
+}
+
+.tab-button.active {
+    background-color: var(--neon-green) !important;
+    color: #FFFFFF !important;
+}
+
+.main-tab-button:not(.active) {
+    background-color: #4B5563 !important;
+    color: #D1D5DB !important;
+}
+
+.tab-button:not(.active) {
+    background-color: #4B5563 !important;
+    color: #D1D5DB !important;
+}
+
+a.bg-neon-green, button.bg-neon-green {
+    background-color: var(--neon-green) !important;
+    color: #FFFFFF !important;
+}
+
+a.bg-neon-green:hover, button.bg-neon-green:hover {
+    background-color: #22C55E !important;
+}

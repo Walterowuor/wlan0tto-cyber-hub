@@ -1,0 +1,62 @@
+/* Custom styles to enhance Tailwind */
+:root {
+    --neon-green: #39ff14;
+}
+
+body.dark {
+    background-color: #1a202c;
+}
+
+.text-neon-green {
+    color: var(--neon-green);
+}
+
+.shadow-neon-green {
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.card:hover {
+    background: linear-gradient(145deg, #2d3748, #1a202c);
+}
+
+.animate-pulse {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Expanded content animation */
+#expanded-content {
+    transition: all 0.3s ease-in-out;
+}
+
+#expanded-content.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+#expanded-content:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Tab styles */
+.tab-button {
+    transition: all 0.3s ease;
+}
+
+.tab-button.active {
+    background-color: var(--neon-green);
+    color: #1a202c;
+}
+
+.tab-content {
+    display: block;
+}
+
+.tab-content.hidden {
+    display: none;
+}
