@@ -2,7 +2,6 @@
 const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '+254743149316';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Terminal effect with Typed.js
     new Typed('#typing-text', {
         strings: ['Cyber Hacker', 'Security Guru', 'Kali Master', 'Network Ninja'],
         typeSpeed: 100,
