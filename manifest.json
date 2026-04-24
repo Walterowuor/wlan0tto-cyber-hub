@@ -1,0 +1,21 @@
+{
+    "name": "Wlan0tto Cyber Hub",
+    "short_name": "Wlan0tto",
+    "description": "Your one-stop solution for cyber services, security, and digital needs",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#2C3947",
+    "theme_color": "#2C3947",
+    "icons": [
+        {
+            "src": "icons/favicon-16.ico",
+            "sizes": "16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "icons/favicon-64.ico",
+            "sizes": "64x64",
+            "type": "image/x-icon"
+        }
+    ]
+} 

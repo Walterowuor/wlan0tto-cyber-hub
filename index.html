@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Wlan0tto Cyber Hub - Premium cyber security services, guides, and tools. Secure your digital life with expert advice and custom solutions.">
+    <meta name="keywords"
+        content="cyber security, hacking, digital safety, kenya cyber services, tech support, online privacy">
+    <meta name="author" content="Wlan0tto">
+    <meta name="theme-color" content="#E8EDF2">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:;">
+    <title>Wlan0tto Cyber Hub | Premium Cyber Services</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icons/favicon-64.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['League Spartan', 'sans-serif'],
+                        serif: ['Libre Baskerville', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        white: 'var(--color-white)',
+                        black: 'var(--color-black)',
+                        'accent-primary': 'var(--accent-primary)',
+                        'accent-secondary': 'var(--accent-secondary)',
+                        'glass-dark': 'var(--glass-dark)',
+                        gray: {
+                            200: 'var(--gray-200)',
+                            300: 'var(--gray-300)',
+                            400: 'var(--gray-400)',
+                            600: 'var(--gray-600)',
+                            700: 'var(--gray-700)',
+                            800: 'var(--gray-800)',
+                            900: 'var(--gray-900)',
+                        }
+                    },
+                    animation: {
+                        'glow': 'glow 2s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        glow: {
+                            '0%, 100%': { textShadow: '0 0 5px #C9996B' },
+                            '50%': { textShadow: '0 0 20px #C9996B' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                    boxShadow: {
+                        'accent-primary': '0 0 15px rgba(201, 153, 107, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body
+    class="bg-gray-900 text-white font-sans antialiased transition-colors duration-300 light-theme selection:bg-accent-primary selection:text-black">
+    <!-- Header -->
+    <header class="fixed w-full bg-gray-800 bg-opacity-80 backdrop-blur-sm z-10">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+            <h1 class="text-2xl font-bold text-accent-primary"><a href="/"
+                    class="hover:opacity-80 transition-opacity">wlan0tto</a></h1>
+            <div class="flex items-center gap-3">
+                <div class="relative mr-2 w-32 sm:w-48 md:w-64">
+                    <input type="text" id="global-search" placeholder="Search..."
+                        class="w-full bg-gray-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full focus:outline-none focus:border-accent-primary border border-gray-600 transition-all placeholder-gray-400 text-sm md:text-base">
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-700 transition">
+                    <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <button id="cart-toggle" class="relative p-2 rounded-full hover:bg-gray-700 transition ml-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                        </path>
+                    </svg>
+                    <span id="cart-count"
+                        class="absolute top-0 right-0 bg-accent-primary text-gray-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center transform translate-x-1 -translate-y-1">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+        class="min-h-[30vh] pt-24 pb-12 flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-700 dark:from-gray-900 dark:to-gray-700">
+        <div class="text-center">
+            <h3 class="text-5xl md:text-7xl font-extrabold mb-4">
+                <a href="/" class="text-accent-primary hover:opacity-80 transition-opacity">wlan0tto</a>
+            </h3>
+            <p class="text-xl md:text-2xl text-gray-300 dark:text-gray-300 mb-8">We Do Things.</p>
+            <a href="#main-tabs"
+                class="inline-block bg-accent-primary text-white font-bold py-3 px-6 rounded-full hover:bg-accent-secondary transition dark:bg-accent-primary dark:text-white">Explore</a>
+        </div>
+    </section>
+
+    <!-- Quick Tips Carousel -->
+    <section class="py-10 bg-gray-800 dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="carousel relative overflow-hidden">
+                <div id="carousel-items" class="flex transition-transform duration-500">
+                    <div class="carousel-item flex-shrink-0 w-full text-center">
+                        <p class="text-xl text-accent-primary">"Never click random links in texts!"</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full text-center">
+                        <p class="text-xl text-accent-primary">"Use strong passwords like Sunny12!Beach."</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full text-center">
+                        <p class="text-xl text-accent-primary">"Got a scam email? Don't reply—delete it!"</p>
+                    </div>
+                    <div class="carousel-item flex-shrink-0 w-full text-center">
+                        <p class="text-xl text-accent-primary">"Keep your phone updated to stay safe."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Tabs Section -->
+    <section id="main-tabs" class="py-20 relative z-10">
+        <div class="container mx-auto px-6 reveal">
+            <div class="flex flex-wrap gap-4 mb-8 justify-center">
+                <button
+                    class="main-tab-button bg-accent-primary text-white px-6 py-3 rounded-full font-bold dark:bg-accent-primary dark:text-white"
+                    data-tab="cybercafe">Wlan0tto Cyber Cafe</button>
+                <button
+                    class="main-tab-button bg-gray-600 text-gray-200 px-6 py-3 rounded-full font-bold dark:bg-gray-600 dark:text-gray-200"
+                    data-tab="skills">Cyber Skills & Safety Tips</button>
+                <button
+                    class="main-tab-button bg-gray-600 text-gray-200 px-6 py-3 rounded-full font-bold dark:bg-gray-600 dark:text-gray-200"
+                    data-tab="guides">Cyber Safety Guides</button>
+            </div>
+
+            <!-- Wlan0tto Cyber Cafe Tab -->
+            <div id="cybercafe" class="main-tab-content">
+                <div class="flex flex-col md:flex-row gap-8 mt-8">
+                    <!-- Sidebar Navigation -->
+                    <aside class="w-full md:w-1/4">
+                        <div class="sticky top-24 bg-gray-900 rounded-xl p-6 shadow-xl border border-gray-800">
+                            <h3 class="text-xl font-bold text-white mb-4">Categories</h3>
+                            <ul id="category-filter" class="space-y-2">
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg bg-gray-800 text-accent-primary font-medium transition hover:bg-gray-700"
+                                        data-filter="all">All Services</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="printing-binding">Printing & Binding</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="device">Device Setup</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="media">Media Services</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="documents">Document Services</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="ecitizen">E-Citizen</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="training">Training</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="branding">Branding & Apparel</button></li>
+                                <li><button
+                                        class="category-btn w-full text-left px-4 py-2 rounded-lg text-gray-300 transition hover:bg-gray-800 hover:text-accent-primary"
+                                        data-filter="packaging">Packaging Solutions</button></li>
+                            </ul>
+                        </div>
+                    </aside>
+
+                    <!-- Product Grid -->
+                    <main class="w-full md:w-3/4">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-3xl font-bold text-white">Premium Services</h2>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-400">Sort by:</span>
+                                <select id="sort-filter"
+                                    class="bg-gray-800 text-white rounded-lg px-3 py-1 border border-gray-700 focus:outline-none focus:border-accent-primary">
+                                    <option value="featured">Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="service-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+                            <!-- Service Cards will be dynamically injected here -->
+                        </div>
+                    </main>
+                </div>
+            </div>
+
+            <!-- Cyber Skills & Safety Tips Tab -->
+            <div id="skills" class="main-tab-content hidden">
+                <h3 class="text-4xl font-bold text-center mb-12 text-accent-primary">Cyber Skills & Safety Tips</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="internet-safety">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Internet Safety</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Stay secure online with simple tricks.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="malware-detection">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Malware Detection</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Spot malware before it bites.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="malware-removal">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Malware Removal</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Clean your device like a pro.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="privacy">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Privacy Protection</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Keep your data locked down.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="ad-blocking">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Ad Blocking</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Stop ads without extra apps.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="device-config">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Device Configuration</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Secure your device for safe use.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="public-wifi">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Public Wi-Fi Safety</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Browse safely on public networks.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="surviving-hacks">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Surviving Hacks</h4>
+                        <p class="text-gray-300 dark:text-gray-300">What to do if you're hacked.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="malware-types">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Malware Types</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Know your digital enemies.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="avoiding-scams">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Avoiding Online Scams</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Don't fall for tricks and scams.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="safe-shopping">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Safe Online Shopping</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Buy stuff online worry-free.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="social-media">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Protecting Social Media</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Keep your accounts safe.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-accent-primary transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="backing-up">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Backing Up Your Stuff</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Save your photos and files.</p>
+                    </div>
+                    <div class="card bg-gray-900 p-6 rounded-lg shadow-lg hover:shadow-neon-green transition transform hover:-translate-y-2 dark:bg-gray-900"
+                        data-info="kids-internet">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Kids and the Internet</h4>
+                        <p class="text-gray-300 dark:text-gray-300">Keep your kids safe online.</p>
+                    </div>
+                </div>
+                <!-- Expanded Content -->
+                <div id="expanded-content"
+                    class="mt-8 hidden bg-gray-900 p-8 rounded-lg shadow-lg max-w-2xl mx-auto dark:bg-gray-900">
+                    <h4 id="expanded-title" class="text-3xl font-bold text-accent-primary mb-4"></h4>
+                    <div id="expanded-text" class="text-gray-300 dark:text-gray-300"></div>
+                    <button id="close-expanded"
+                        class="mt-6 bg-accent-primary text-white font-bold py-2 px-4 rounded-full hover:bg-accent-secondary transition dark:bg-accent-primary dark:text-white">Close</button>
+                </div>
+            </div>
+
+            <!-- Cyber Safety Guides Tab -->
+            <div id="guides" class="main-tab-content hidden">
+                <h3 class="text-4xl font-bold text-center mb-12 text-accent-primary">Cyber Safety Guides</h3>
+                <div class="space-y-8">
+                    <!-- Guide: Avoiding Online Scams -->
+                    <div class="guide bg-gray-800 p-6 rounded-lg shadow-lg dark:bg-gray-800">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Avoiding Online Scams</h4>
+                        <p class="text-gray-300 dark:text-gray-300 mb-4">Imagine getting a text saying your bank account
+                            is locked—don't panic! Here's how to spot scams and stay safe.</p>
+                        <div class="flex space-x-4 mb-4">
+                            <button
+                                class="tab-button bg-accent-primary text-white px-4 py-2 rounded-full dark:bg-accent-primary dark:text-white"
+                                data-tab="scams-android">Android</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="scams-windows">Windows</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="scams-linux">Linux</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="scams-macos">macOS/iOS</button>
+                        </div>
+                        <div id="scams-android" class="tab-content text-gray-300 dark:text-gray-300">
+                            <ul class="list-disc pl-5">
+                                <li>Open your email app and check the sender's address. If it's weird (like
+                                    "bank@xyz123.com"), don't click links.</li>
+                                <li>Got a text saying you won a prize? Don't reply or click—delete it.</li>
+                                <li>Go to Settings > Security and turn on "Verify apps" to block fake apps.</li>
+                                <li>Install Firefox and add uBlock Origin to stop scam ads.</li>
+                                <li>Think it's a scam? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="scams-windows" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Check email senders in Outlook or Gmail. If it's odd (like "support@fakebank.com"),
+                                    don't click links.</li>
+                                <li>Got a pop-up saying your PC has a virus? Close it and don't call the number.</li>
+                                <li>Open Windows Security (search for it) and run a quick scan.</li>
+                                <li>Use Edge or Firefox with uBlock Origin to block scam ads.</li>
+                                <li>Need scam help? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="scams-linux" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>In Thunderbird, check the sender's address. If it's not legit (like
+                                    "paypal@xyz.com"), delete it.</li>
+                                <li>Don't install software from random sites—use your package manager
+                                    (<code>sudo apt install</code>).</li>
+                                <li>Use Firefox with uBlock Origin to block scam ads.</li>
+                                <li>Run <code>clamscan</code> (<code>sudo apt install clamav</code>) to scan files.</li>
+                                <li>Scam concerns? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="scams-macos" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>In Mail or Gmail, check the sender's email. If it's fake (like "apple@xyz123.com"),
+                                    don't click links.</li>
+                                <li>Got a call saying your Mac is hacked? Hang up—it's a scam.</li>
+                                <li>Go to System Settings > Security & Privacy and ensure Gatekeeper is on.</li>
+                                <li>Use Safari or Firefox with uBlock Origin to block scam ads.</li>
+                                <li>Think it's a scam? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Guide: Safe Browsing -->
+                    <div class="guide bg-gray-800 p-6 rounded-lg shadow-lg dark:bg-gray-800">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Safe Browsing</h4>
+                        <p class="text-gray-300 dark:text-gray-300 mb-4">Clicked a shady link by mistake? Don't
+                            worry—here's how to browse safely and keep your device clean.</p>
+                        <div class="flex space-x-4 mb-4">
+                            <button
+                                class="tab-button bg-accent-primary text-white px-4 py-2 rounded-full dark:bg-accent-primary dark:text-white"
+                                data-tab="browsing-android">Android</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="browsing-windows">Windows</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="browsing-linux">Linux</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="browsing-macos">macOS/iOS</button>
+                        </div>
+                        <div id="browsing-android" class="tab-content text-gray-300 dark:text-gray-300">
+                            <ul class="list-disc pl-5">
+                                <li>Look for a lock icon in Chrome or Firefox before entering passwords.</li>
+                                <li>Don't tap links in random texts—check the website address first.</li>
+                                <li>Go to Settings > Apps > Chrome and clear cookies weekly.</li>
+                                <li>Install Firefox and add uBlock Origin to block bad ads.</li>
+                                <li>Need browsing help? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="browsing-windows" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Check for a lock icon in Edge or Firefox before logging in.</li>
+                                <li>Avoid links in suspicious emails—hover to see the real address.</li>
+                                <li>Open Edge > Settings > Privacy and clear browsing data weekly.</li>
+                                <li>Use Firefox with uBlock Origin to stop risky ads.</li>
+                                <li>Browsing questions? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="browsing-linux" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Use Firefox and check for a lock icon before entering info.</li>
+                                <li>Don't click links in odd emails—check the URL first.</li>
+                                <li>Clear cookies in Firefox (Preferences > Privacy & Security).</li>
+                                <li>Add uBlock Origin to Firefox to block bad ads.</li>
+                                <li>Browsing tips needed? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="browsing-macos" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Use Safari or Firefox and look for a lock icon before signing in.</li>
+                                <li>Don't click links in strange emails—check the website address.</li>
+                                <li>Clear cookies in Safari (Settings > Privacy).</li>
+                                <li>Add uBlock Origin to Firefox for ad blocking.</li>
+                                <li>Need help? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Guide: Protecting Passwords -->
+                    <div class="guide bg-gray-800 p-6 rounded-lg shadow-lg dark:bg-gray-800">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Protecting Passwords</h4>
+                        <p class="text-gray-300 dark:text-gray-300 mb-4">Forgot your e-Citizen password? Don't reuse old
+                            ones—here's how to make strong passwords and secure your accounts.</p>
+                        <div class="flex space-x-4 mb-4">
+                            <button
+                                class="tab-button bg-accent-primary text-white px-4 py-2 rounded-full dark:bg-accent-primary dark:text-white"
+                                data-tab="passwords-android">Android</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="passwords-windows">Windows</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="passwords-linux">Linux</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="passwords-macos">macOS/iOS</button>
+                        </div>
+                        <div id="passwords-android" class="tab-content text-gray-300 dark:text-gray-300">
+                            <ul class="list-disc pl-5">
+                                <li>Use a password like "Sunny12!Beach" (mix letters, numbers, symbols).</li>
+                                <li>Go to Settings > Security > Google Account and turn on 2-Step Verification.</li>
+                                <li>Don't use the same password for email and banking.</li>
+                                <li>Save passwords in Chrome or a free app like Bitwarden.</li>
+                                <li>Password trouble? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="passwords-windows" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Create a password like "Pizza!2026" (use letters, numbers, symbols).</li>
+                                <li>Open Edge > Settings > Profiles and enable 2-Step Verification for your Microsoft
+                                    account.</li>
+                                <li>Use different passwords for each website.</li>
+                                <li>Store passwords in Edge or download Bitwarden.</li>
+                                <li>Need help? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="passwords-linux" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Make a password like "Code!2026" (mix letters, numbers, symbols).</li>
+                                <li>Use Firefox and enable 2-Step Verification for your email account.</li>
+                                <li>Don't reuse passwords across sites.</li>
+                                <li>Save passwords in Firefox or install Bitwarden
+                                    (<code>sudo snap install bitwarden</code>).</li>
+                                <li>Password issues? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="passwords-macos" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Use a password like "Apple!2026" (letters, numbers, symbols).</li>
+                                <li>Go to System Settings > Apple ID and turn on Two-Factor Authentication.</li>
+                                <li>Use unique passwords for each account.</li>
+                                <li>Save passwords in Safari or download Bitwarden.</li>
+                                <li>Need help? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- Guide: Staying Safe on Social Media -->
+                    <div class="guide bg-gray-800 p-6 rounded-lg shadow-lg dark:bg-gray-800">
+                        <h4 class="text-2xl font-bold text-accent-primary mb-4">Staying Safe on Social Media</h4>
+                        <p class="text-gray-300 dark:text-gray-300 mb-4">Got a weird friend request on WhatsApp? Don't
+                            accept—here's how to lock down your social media.</p>
+                        <div class="flex space-x-4 mb-4">
+                            <button
+                                class="tab-button bg-accent-primary text-white px-4 py-2 rounded-full dark:bg-accent-primary dark:text-white"
+                                data-tab="social-android">Android</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="social-windows">Windows</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="social-linux">Linux</button>
+                            <button
+                                class="tab-button bg-gray-600 text-gray-200 px-4 py-2 rounded-full dark:bg-gray-600 dark:text-gray-200"
+                                data-tab="social-macos">macOS/iOS</button>
+                        </div>
+                        <div id="social-android" class="tab-content text-gray-300 dark:text-gray-300">
+                            <ul class="list-disc pl-5">
+                                <li>Open WhatsApp or Instagram > Settings and turn on two-step verification.</li>
+                                <li>Go to Facebook > Settings > Privacy and set posts to "Friends Only."</li>
+                                <li>Don't accept friend requests from strangers.</li>
+                                <li>Check apps linked to your account and remove unknown ones.</li>
+                                <li>Social media issues? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="social-windows" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>In a browser, go to Facebook > Settings > Security and enable two-step login.</li>
+                                <li>Set Instagram or WhatsApp to private in their settings.</li>
+                                <li>Don't click friend requests from people you don't know.</li>
+                                <li>Check connected apps in your account settings and delete weird ones.</li>
+                                <li>Need help? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="social-linux" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>Use Firefox to log into WhatsApp or Instagram and enable two-step login.</li>
+                                <li>In Facebook, go to Settings > Privacy and make posts private.</li>
+                                <li>Ignore friend requests from unknown accounts.</li>
+                                <li>Remove strange apps linked to your accounts.</li>
+                                <li>Social media trouble? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                        <div id="social-macos" class="tab-content text-gray-300 dark:text-gray-300 hidden">
+                            <ul class="list-disc pl-5">
+                                <li>In Safari, go to Instagram or WhatsApp and turn on two-step verification.</li>
+                                <li>Open Facebook > Settings > Privacy and set posts to "Friends Only."</li>
+                                <li>Don't accept requests from strangers.</li>
+                                <li>Check and remove unknown apps in your account settings.</li>
+                                <li>Need help? Text <a href="https://wa.me/+254743149316"
+                                        class="text-accent-primary hover:underline">+254743149316</a>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 bg-gray-900 text-center dark:bg-gray-900 border-t border-gray-800 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold text-accent-primary mb-2"><a href="/"
+                            class="hover:opacity-80 transition-opacity">wlan0tto</a></h2>
+                    <p class="text-gray-400 text-sm">Premium Cyber Services & Security Hub.</p>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="flex items-center text-gray-400 text-sm gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                            </path>
+                        </svg>
+                        SSL Secured Checkout
+                    </div>
+                    <a href="pages/privacy.html"
+                        class="text-gray-400 hover:text-accent-primary text-sm transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-accent-primary text-sm transition">Return Policy</a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+                <p>© 2026 <a href="/" class="hover:text-accent-primary transition">Wlan0tto</a>. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-out Cart Drawer -->
+    <div id="cart-drawer"
+        class="fixed inset-y-0 right-0 w-full max-w-md bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col border-l border-gray-800">
+        <div class="flex items-center justify-between p-6 border-b border-gray-800">
+            <h2 class="text-2xl font-bold text-white">Your Cart</h2>
+            <button id="close-cart" class="text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+            <!-- Cart items will be injected here -->
+            <div class="flex flex-col items-center justify-center h-full text-gray-400 space-y-4" id="empty-cart-msg">
+                <svg class="w-16 h-16 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                </svg>
+                <p>Your cart is empty.</p>
+            </div>
+        </div>
+
+        <div class="p-6 border-t border-gray-800 bg-gray-900">
+            <div class="flex justify-between items-center mb-4 text-lg font-bold text-white">
+                <span>Subtotal</span>
+                <span id="cart-subtotal" class="text-accent-primary">KSh 0.00</span>
+            </div>
+            <p class="text-sm text-gray-400 mb-6">Taxes and additional fees are calculated at checkout.</p>
+            <button id="checkout-btn"
+                class="w-full bg-accent-primary text-gray-900 font-bold text-lg py-4 rounded-xl hover:bg-accent-secondary transition transform hover:-translate-y-1 shadow-[0_0_15px_rgba(201,153,107,0.3)]">
+                Place Order (WhatsApp)
+            </button>
+
+            <div class="mt-4 flex items-center justify-center space-x-2 text-gray-400 text-sm">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                    </path>
+                </svg>
+                <span>Secure Checkout</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40 hidden transition-opacity opacity-0 pointer-events-none">
+    </div>
+
+    <!-- Move all script tags to the end of body -->
+    <script type="module" src="js/app.js"></script>
+    <script src="js/visuals.js"></script>
+</body>
+
+</html>
