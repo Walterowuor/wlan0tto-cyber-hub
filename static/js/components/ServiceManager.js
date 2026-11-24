@@ -199,12 +199,13 @@ export class ServiceManager {
                 filtered = filtered.filter(s => s.category === currentFilter);
             }
 
-            // Apply search
+            // Apply search (name, unit suffix, and category label)
             if (currentSearch) {
                 const term = currentSearch.toLowerCase();
                 filtered = filtered.filter(s =>
                     s.name.toLowerCase().includes(term) ||
-                    (s.unit || '').toLowerCase().includes(term));
+                    (s.unit || '').toLowerCase().includes(term) ||
+                    (s.category || '').replace('-', ' ').toLowerCase().includes(term));
             }
 
             // Apply sort
