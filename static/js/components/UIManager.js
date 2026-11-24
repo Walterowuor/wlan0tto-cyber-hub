@@ -72,7 +72,7 @@ export class UIManager {
     }
 
     initInfoCards() {
-        const infoData = {
+        const defaultInfoData = {
             'internet-safety': { title: 'Internet Safety', text: 'Use strong, unique passwords for every account. Enable Two-Factor Authentication (2FA) wherever possible. Be cautious of public Wi-Fi and use a VPN if necessary.' },
             'malware-detection': { title: 'Malware Detection', text: 'Look out for unexpected pop-ups, slow device performance, and unrecognized apps. Run regular scans with trusted antivirus software.' },
             'malware-removal': { title: 'Malware Removal', text: 'Disconnect from the internet, enter safe mode, and run a full system scan. If the issue persists, consider a clean OS installation or seek professional help.' },
@@ -89,6 +89,17 @@ export class UIManager {
             'kids-internet': { title: 'Kids on the Internet', text: 'Set up parental controls on devices and routers. Teach children about online predators and cyberbullying. Keep computers in common areas of the house.' }
         };
 
+        // Load admin-editable tips from the backend, falling back to defaults
+        fetch('/api/tips/')
+            .then(r => (r.ok ? r.json() : Promise.reject(r.status)))
+            .then(data => {
+                const merged = { ...defaultInfoData, ...(data.tips || {}) };
+                this.bindInfoCards(merged);
+            })
+            .catch(() => this.bindInfoCards(defaultInfoData));
+    }
+
+    bindInfoCards(infoData) {
         const cards = document.querySelectorAll('.card[data-info]');
         const expandedContent = document.getElementById('expanded-content');
         const expandedTitle = document.getElementById('expanded-title');

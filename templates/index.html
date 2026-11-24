@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,8 @@
     <meta http-equiv="Content-Security-Policy"
         content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:;">
     <title>Wlan0tto Cyber Hub | Premium Cyber Services</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="icons/favicon-64.ico" type="image/x-icon">
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <link rel="icon" href="{% static 'icons/favicon-64.ico' %}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -68,22 +69,22 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body
     class="bg-gray-900 text-white font-sans antialiased transition-colors duration-300 light-theme selection:bg-accent-primary selection:text-black">
     <!-- Header -->
-    <header class="fixed w-full bg-gray-800 bg-opacity-80 backdrop-blur-sm z-10">
+    <header class="fixed w-full bg-gray-800 bg-opacity-80 backdrop-blur-sm z-30">
         <nav class="container mx-auto flex justify-between items-center py-4 px-6">
-            <h1 class="text-2xl font-bold text-accent-primary"><a href="/"
+            <h1 class="text-xl min-[380px]:text-2xl font-bold text-accent-primary"><a href="/"
                     class="hover:opacity-80 transition-opacity">wlan0tto</a></h1>
-            <div class="flex items-center gap-3">
-                <div class="relative mr-2 w-32 sm:w-48 md:w-64">
+            <div class="flex items-center gap-2 min-[380px]:gap-3">
+                <div class="relative mr-1 min-[380px]:mr-2 w-14 min-[380px]:w-28 sm:w-48 md:w-64">
                     <input type="text" id="global-search" placeholder="Search..."
                         class="w-full bg-gray-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-full focus:outline-none focus:border-accent-primary border border-gray-600 transition-all placeholder-gray-400 text-sm md:text-base">
                 </div>
-                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-700 transition">
+                <button id="theme-toggle" class="hidden min-[380px]:block p-2 rounded-full hover:bg-gray-700 transition">
                     <svg id="theme-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
@@ -97,6 +98,14 @@
                     </svg>
                     <span id="cart-count"
                         class="absolute top-0 right-0 bg-accent-primary text-gray-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center transform translate-x-1 -translate-y-1">0</span>
+                </button>
+
+                <button id="user-menu-toggle" class="relative p-2 rounded-full hover:bg-gray-700 transition ml-1 min-[380px]:ml-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" />
+                        <circle cx="12" cy="9" r="3" />
+                        <path d="M6.5 19.5c1.4-2.5 3.6-3.5 5.5-3.5s4.1 1 5.5 3.5" />
+                    </svg>
                 </button>
             </div>
         </nav>
@@ -193,12 +202,12 @@
 
                     <!-- Product Grid -->
                     <main class="w-full md:w-3/4">
-                        <div class="flex justify-between items-center mb-6">
-                            <h2 class="text-3xl font-bold text-white">Premium Services</h2>
+                        <div class="flex flex-wrap justify-between items-center gap-2 mb-6">
+                            <h2 class="text-2xl min-[380px]:text-3xl font-bold text-white">Premium Services</h2>
                             <div class="flex items-center gap-2">
-                                <span class="text-sm text-gray-400">Sort by:</span>
+                                <span class="text-xs min-[380px]:text-sm text-gray-400">Sort by:</span>
                                 <select id="sort-filter"
-                                    class="bg-gray-800 text-white rounded-lg px-3 py-1 border border-gray-700 focus:outline-none focus:border-accent-primary">
+                                    class="bg-gray-800 text-white rounded-lg px-2 min-[380px]:px-3 py-1 border border-gray-700 focus:outline-none focus:border-accent-primary text-xs min-[380px]:text-sm max-w-[9rem] min-[380px]:max-w-none">
                                     <option value="featured">Featured</option>
                                     <option value="price-low">Price: Low to High</option>
                                     <option value="price-high">Price: High to Low</option>
@@ -206,7 +215,7 @@
                             </div>
                         </div>
 
-                        <div id="service-grid" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
+                        <div id="service-grid" class="grid grid-cols-2 min-[420px]:grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-2.5 min-[420px]:gap-3 sm:gap-4 lg:gap-5">
                             <!-- Service Cards will be dynamically injected here -->
                         </div>
                     </main>
@@ -573,8 +582,14 @@
                         </svg>
                         SSL Secured Checkout
                     </div>
-                    <a href="pages/privacy.html"
+                    <a href="{% url 'privacy' %}"
                         class="text-gray-400 hover:text-accent-primary text-sm transition">Privacy Policy</a>
+                    {% if user.is_staff %}
+                    <a href="{% url 'dashboard' %}"
+                        class="text-gray-400 hover:text-accent-primary text-sm transition">Dashboard</a>
+                    <a href="{% url 'admin:index' %}"
+                        class="text-gray-400 hover:text-accent-primary text-sm transition">Admin</a>
+                    {% endif %}
                     <a href="#" class="text-gray-400 hover:text-accent-primary text-sm transition">Return Policy</a>
                 </div>
             </div>
@@ -587,7 +602,7 @@
 
     <!-- Slide-out Cart Drawer -->
     <div id="cart-drawer"
-        class="fixed inset-y-0 right-0 w-full max-w-md bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col border-l border-gray-800">
+        class="fixed inset-y-0 right-0 w-full max-w-md md:max-w-[24rem] bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col border-l border-gray-800">
         <div class="flex items-center justify-between p-6 border-b border-gray-800">
             <h2 class="text-2xl font-bold text-white">Your Cart</h2>
             <button id="close-cart" class="text-gray-400 hover:text-white transition">
@@ -609,15 +624,29 @@
             </div>
         </div>
 
-        <div class="p-6 border-t border-gray-800 bg-gray-900">
-            <div class="flex justify-between items-center mb-4 text-lg font-bold text-white">
+        <div class="p-4 md:p-6 border-t border-gray-800 bg-gray-900 max-h-[45vh] overflow-y-auto">
+            <div id="customer-fields" class="hidden flex-col gap-1.5 mb-3">
+                <input type="text" id="customer-name" placeholder="Your name (optional)"
+                    class="w-full bg-gray-800 text-white px-3 py-1.5 rounded-lg border border-gray-700 focus:outline-none focus:border-accent-primary text-xs md:text-sm">
+                <input type="tel" id="customer-phone" placeholder="Phone / WhatsApp number (optional)"
+                    class="w-full bg-gray-800 text-white px-3 py-1.5 rounded-lg border border-gray-700 focus:outline-none focus:border-accent-primary text-xs md:text-sm">
+            </div>
+            <button id="toggle-customer-fields"
+                class="text-xs text-gray-400 hover:text-accent-primary transition mb-3">
+                + Add name / phone (optional)
+            </button>
+            <div class="flex justify-between items-center mb-3 text-base md:text-lg font-bold text-white">
                 <span>Subtotal</span>
                 <span id="cart-subtotal" class="text-accent-primary">KSh 0.00</span>
             </div>
-            <p class="text-sm text-gray-400 mb-6">Taxes and additional fees are calculated at checkout.</p>
+            <p class="text-xs text-gray-400 mb-3">Taxes and additional fees are calculated at checkout.</p>
             <button id="checkout-btn"
-                class="w-full bg-accent-primary text-gray-900 font-bold text-lg py-4 rounded-xl hover:bg-accent-secondary transition transform hover:-translate-y-1 shadow-[0_0_15px_rgba(201,153,107,0.3)]">
+                class="w-full bg-accent-primary text-gray-900 font-bold text-base md:text-lg py-3 md:py-4 rounded-xl hover:bg-accent-secondary transition transform hover:-translate-y-1 shadow-[0_0_15px_rgba(201,153,107,0.3)]">
                 Place Order (WhatsApp)
+            </button>
+            <button id="continue-shopping"
+                class="w-full mt-2 text-sm text-gray-400 hover:text-white transition py-1">
+                ← Continue shopping
             </button>
 
             <div class="mt-4 flex items-center justify-center space-x-2 text-gray-400 text-sm">
@@ -636,9 +665,88 @@
         class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40 hidden transition-opacity opacity-0 pointer-events-none">
     </div>
 
+    <!-- Profile & Settings Drawer -->
+    <div id="profile-overlay"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40 hidden transition-opacity opacity-0 pointer-events-none">
+    </div>
+    <div id="profile-drawer"
+        class="fixed inset-y-0 right-0 w-full max-w-sm bg-gray-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col border-l border-gray-800">
+        <div class="flex items-center justify-between p-5 border-b border-gray-800">
+            <h2 class="text-xl font-bold text-white">Profile & Settings</h2>
+            <button id="close-profile" class="text-gray-400 hover:text-white transition">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex border-b border-gray-800">
+            <button class="profile-tab flex-1 py-3 text-sm font-bold text-accent-primary border-b-2 border-accent-primary" data-ptab="profile">Profile</button>
+            <button class="profile-tab flex-1 py-3 text-sm font-bold text-gray-400 border-b-2 border-transparent" data-ptab="orders">My Orders</button>
+            <button class="profile-tab flex-1 py-3 text-sm font-bold text-gray-400 border-b-2 border-transparent" data-ptab="settings">Settings</button>
+        </div>
+
+        <div class="flex-1 overflow-y-auto p-5">
+            <!-- Profile tab -->
+            <div id="ptab-profile" class="profile-tab-content">
+                <p class="text-sm text-gray-400 mb-4">Save your details to speed up checkout and look up your orders.</p>
+                <label class="block text-xs text-gray-400 mb-1">Name</label>
+                <input type="text" id="profile-name" placeholder="Your name"
+                    class="w-full bg-gray-800 text-white px-3 py-2 rounded-lg border border-gray-700 focus:outline-none focus:border-accent-primary text-sm mb-3">
+                <label class="block text-xs text-gray-400 mb-1">Phone / WhatsApp</label>
+                <input type="tel" id="profile-phone" placeholder="e.g. 0712 345 678"
+                    class="w-full bg-gray-800 text-white px-3 py-2 rounded-lg border border-gray-700 focus:outline-none focus:border-accent-primary text-sm mb-4">
+                <button id="save-profile"
+                    class="w-full bg-accent-primary text-gray-900 font-bold py-2.5 rounded-lg hover:bg-accent-secondary transition text-sm">
+                    Save Profile
+                </button>
+                <p id="profile-saved-msg" class="text-xs text-green-400 mt-2 hidden">Profile saved!</p>
+            </div>
+
+            <!-- Orders tab -->
+            <div id="ptab-orders" class="profile-tab-content hidden">
+                <p class="text-sm text-gray-400 mb-4">Enter the phone number used at checkout to see your orders.</p>
+                <div class="flex gap-2 mb-4">
+                    <input type="tel" id="orders-phone" placeholder="Phone number"
+                        class="flex-1 bg-gray-800 text-white px-3 py-2 rounded-lg border border-gray-700 focus:outline-none focus:border-accent-primary text-sm">
+                    <button id="lookup-orders"
+                        class="bg-gray-700 hover:bg-accent-primary hover:text-gray-900 text-white font-bold px-4 py-2 rounded-lg transition text-sm">
+                        Find
+                    </button>
+                </div>
+                <div id="orders-list" class="space-y-3">
+                    <p class="text-sm text-gray-500">No orders loaded yet.</p>
+                </div>
+            </div>
+
+            <!-- Settings tab -->
+            <div id="ptab-settings" class="profile-tab-content hidden space-y-3">
+                <button id="settings-theme"
+                    class="w-full flex items-center justify-between bg-gray-800 hover:bg-gray-700 px-4 py-3 rounded-lg transition text-sm text-white">
+                    <span>Theme</span>
+                    <span id="settings-theme-state" class="text-accent-primary font-bold">Dark</span>
+                </button>
+                <button id="settings-clear-cart"
+                    class="w-full flex items-center justify-between bg-gray-800 hover:bg-gray-700 px-4 py-3 rounded-lg transition text-sm text-white">
+                    <span>Clear cart</span>
+                    <span class="text-gray-400">0 items</span>
+                </button>
+                <button id="settings-clear-data"
+                    class="w-full flex items-center justify-between bg-gray-800 hover:bg-red-900/40 px-4 py-3 rounded-lg transition text-sm text-white">
+                    <span>Reset local data</span>
+                    <span class="text-gray-400">cart, profile, analytics</span>
+                </button>
+                <p class="text-xs text-gray-500 pt-2">Profile & order data is stored on this device. Orders are matched by phone number.</p>
+            </div>
+        </div>
+    </div>
+
+    {% csrf_token %}
     <!-- Move all script tags to the end of body -->
-    <script type="module" src="js/app.js"></script>
-    <script src="js/visuals.js"></script>
+    <script type="module" src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/visuals.js' %}"></script>
 </body>
 
 </html>

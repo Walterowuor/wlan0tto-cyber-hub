@@ -31,3 +31,11 @@ out/
 archive/
 tmp/
 *.tmp
+
+# Django
+db.sqlite3
+staticfiles/
+__pycache__/
+*.pyc
+.env
+.venv/

@@ -1,11 +1,13 @@
 import { ServiceManager } from './components/ServiceManager.js';
 import { UIManager } from './components/UIManager.js';
+import { ProfileManager } from './components/ProfileManager.js';
 import { analytics } from './utils/AnalyticsManager.js';
 
 class App {
     constructor() {
         this.serviceManager = new ServiceManager();
         this.uiManager = new UIManager();
+        this.profileManager = new ProfileManager();
         analytics.logVisit();
     }
 
@@ -18,6 +20,13 @@ class App {
                 this.uiManager.init();
             } catch (uiError) {
                 console.error('UI Manager initialization failed:', uiError);
+            }
+
+            // Initialize profile & settings
+            try {
+                this.profileManager.init();
+            } catch (profileError) {
+                console.error('Profile Manager initialization failed:', profileError);
             }
 
             // Initialize service management
@@ -38,7 +47,10 @@ class App {
     }
 
     registerServiceWorker() {
-        if ('serviceWorker' in navigator) {
+        // Don't register the service worker on localhost — it caches assets
+        // and causes stale-JS issues during development.
+        const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname);
+        if (!isLocal && 'serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js')
                 .then(registration => {
                     console.log('ServiceWorker registration successful');

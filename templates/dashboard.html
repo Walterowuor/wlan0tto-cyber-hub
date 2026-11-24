@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — Wlan0tto Cyber Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{% static 'icons/favicon-64.ico' %}" type="image/x-icon">
+</head>
+<body class="bg-gray-900 text-white font-sans antialiased min-h-screen">
+    <header class="bg-gray-800 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <h1 class="text-xl font-bold text-accent-primary">Wlan0tto <span class="text-white">Dashboard</span></h1>
+            <div class="flex items-center gap-4 text-sm">
+                <span class="text-gray-400">{{ user.username }}</span>
+                <a href="{% url 'admin:index' %}" class="text-gray-300 hover:text-accent-primary">Django Admin</a>
+                <a href="{% url 'home' %}" class="text-gray-300 hover:text-accent-primary">View site</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            <div class="bg-gray-800 rounded-xl p-5 border border-gray-700">
+                <p class="text-gray-400 text-sm">Visits today</p>
+                <p class="text-3xl font-bold text-accent-primary">{{ visits_today }}</p>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-5 border border-gray-700">
+                <p class="text-gray-400 text-sm">Total visits</p>
+                <p class="text-3xl font-bold text-white">{{ visits_total }}</p>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-5 border border-gray-700">
+                <p class="text-gray-400 text-sm">Orders ({{ orders_pending }} pending)</p>
+                <p class="text-3xl font-bold text-white">{{ orders_total }}</p>
+            </div>
+            <div class="bg-gray-800 rounded-xl p-5 border border-gray-700">
+                <p class="text-gray-400 text-sm">Revenue today</p>
+                <p class="text-3xl font-bold text-green-400">KSh {{ revenue_today|floatformat:2 }}</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <section class="bg-gray-800 rounded-xl border border-gray-700">
+                <h2 class="text-lg font-bold p-5 border-b border-gray-700">Recent orders</h2>
+                <div class="divide-y divide-gray-700">
+                    {% for order in recent_orders %}
+                    <div class="p-4 flex justify-between items-center">
+                        <div>
+                            <p class="font-semibold">#{{ order.pk }} — {{ order.customer_name|default:"Guest" }}</p>
+                            <p class="text-sm text-gray-400">
+                                {{ order.created_at|date:"M d, H:i" }} ·
+                                {% for item in order.items.all %}{{ item.name }} x{{ item.quantity }}{% if not forloop.last %}, {% endif %}{% endfor %}
+                            </p>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-bold text-accent-primary">KSh {{ order.total|floatformat:2 }}</p>
+                            <p class="text-xs uppercase tracking-wide
+                                {% if order.status == 'completed' %}text-green-400
+                                {% elif order.status == 'cancelled' %}text-red-400
+                                {% elif order.status == 'confirmed' %}text-blue-400
+                                {% else %}text-yellow-400{% endif %}">{{ order.get_status_display }}</p>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p class="p-4 text-gray-400">No orders yet.</p>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <div class="space-y-6">
+                <section class="bg-gray-800 rounded-xl border border-gray-700">
+                    <h2 class="text-lg font-bold p-5 border-b border-gray-700">Top services</h2>
+                    <ul class="divide-y divide-gray-700">
+                        {% for svc in top_services %}
+                        <li class="p-4 flex justify-between">
+                            <span>{{ svc.name }}</span>
+                            <span class="text-accent-primary font-bold">{{ svc.qty }} sold</span>
+                        </li>
+                        {% empty %}
+                        <li class="p-4 text-gray-400">No sales yet.</li>
+                        {% endfor %}
+                    </ul>
+                </section>
+
+                <section class="bg-gray-800 rounded-xl border border-gray-700 p-5">
+                    <h2 class="text-lg font-bold mb-3">Quick links</h2>
+                    <div class="flex flex-wrap gap-3 text-sm">
+                        <a href="{% url 'admin:catalog_service_changelist' %}" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-accent-primary hover:text-gray-900 transition">Manage services</a>
+                        <a href="{% url 'admin:orders_order_changelist' %}" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-accent-primary hover:text-gray-900 transition">Manage orders</a>
+                        <a href="{% url 'admin:content_safetytip_changelist' %}" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-accent-primary hover:text-gray-900 transition">Edit tips ({{ tips_count }} live)</a>
+                        <a href="{% url 'admin:analytics_siteevent_changelist' %}" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-accent-primary hover:text-gray-900 transition">Analytics events</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
